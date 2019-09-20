@@ -14,7 +14,7 @@ def loopPath(dir):
     audioExts = ['wav','mp3','ogg','flac','ape','aif','aiff','au','svx','snd','mid','voc','wma','cdda','wv','aac','m4a','m4p']
     textExts = ['pdf', 'doc', 'docx','rtf','epub', 'txt','xls', 'xlsx','csv', 'wps','odf','djvu', 'chm', 'ppt', 'pptx']
     nameFilters = ['xxx','巨乳','大奶','露出','番号','无码','做爱','性爱','爱爱','性交','颜射','后入']
-    dirFilters = ['xml']
+    dirFilters = ['xxx']
     whiteLists = []
     xxxLists = []
     audioLists = []
@@ -27,7 +27,7 @@ def loopPath(dir):
     for rootDir, subDir, fileNameLists in os.walk(dir):
         for fileName in fileNameLists:
             fullName = os.path.join(rootDir, fileName)
-            if containsStr(rootDir,dirFilters) and i == 1: #过滤一级目录名
+            if containsStr(rootDir,dirFilters):
                 xxxLists.append(fullName)
             else:
                 if containsStr(fileName,nameFilters):
